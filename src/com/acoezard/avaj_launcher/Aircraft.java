@@ -1,5 +1,7 @@
 package com.acoezard.avaj_launcher;
 
+import com.acoezard.avaj_launcher.utils.Coordinates;
+
 public class Aircraft {
     protected long id;
     protected String name;
