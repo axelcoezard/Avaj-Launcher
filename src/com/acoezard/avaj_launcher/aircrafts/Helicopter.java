@@ -16,7 +16,7 @@ public class Helicopter extends Aircraft implements Flyable {
         String weather = weatherTower.getWeather(coordinates);
         switch(weather) {
             case WeatherProvider.WEATHER_SUN:
-                this.coordinates.increaseLatitude(10);
+                this.coordinates.increaseLongitude(10);
                 this.coordinates.increaseHeight(2);
             case WeatherProvider.WEATHER_RAIN:
                 this.coordinates.increaseLongitude(5);
@@ -33,6 +33,7 @@ public class Helicopter extends Aircraft implements Flyable {
 
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
+        this.weatherTower.register(this);
     }
 
 

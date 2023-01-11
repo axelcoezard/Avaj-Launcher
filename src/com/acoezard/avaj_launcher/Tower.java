@@ -11,17 +11,17 @@ public class Tower {
     
     public void register(Flyable flyable) {
         this.observers.add(flyable);
-        Logger.log("Tower says: " + flyable.toString() + " registered to tower.");
+        Logger.log("Tower says: " + flyable.toString() + " registered to weather tower.");
     }
 
     public void unregister(Flyable flyable) {
         this.observers.remove(flyable);
-        Logger.log("Tower says: " + flyable.toString() + " unregistered from tower.");
+        Logger.log("Tower says: " + flyable.toString() + " unregistered from weather tower.");
     }
 
     protected void conditionsChanged() {
-        for (Flyable flyable : observers) {
-            flyable.updateConditions();
-        }
+        for (int i = 0; i < observers.size(); i++) {
+			observers.get(i).updateConditions();
+		}
     }
 }

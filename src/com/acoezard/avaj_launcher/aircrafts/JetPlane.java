@@ -33,6 +33,7 @@ public class JetPlane extends Aircraft implements Flyable {
 
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
+        this.weatherTower.register(this);
     }
 
 

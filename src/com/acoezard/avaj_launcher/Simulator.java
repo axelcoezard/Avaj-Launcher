@@ -2,7 +2,6 @@ package com.acoezard.avaj_launcher;
 
 import java.io.IOException;
 
-import com.acoezard.avaj_launcher.aircrafts.Flyable;
 import com.acoezard.avaj_launcher.exceptions.SimulatorException;
 import com.acoezard.avaj_launcher.utils.Logger;
 import com.acoezard.avaj_launcher.utils.Parser;
@@ -22,9 +21,8 @@ class Simulator {
 		parser.parse(filename);
 
 		this.simulationCount = parser.getSimulationCount();
-		for (Flyable flyable : parser.getAircrafts()) {
-			flyable.registerTower(this.weatherTower);
-			this.weatherTower.register(flyable);
+		for (int i = 0; i < parser.getAircrafts().size(); i++) {
+			parser.getAircrafts().get(i).registerTower(this.weatherTower);
 		}
 	}
 
