@@ -4,13 +4,16 @@ import java.io.IOException;
 
 import com.acoezard.avaj_launcher.aircrafts.Flyable;
 import com.acoezard.avaj_launcher.exceptions.SimulatorException;
+import com.acoezard.avaj_launcher.utils.Logger;
 import com.acoezard.avaj_launcher.utils.Parser;
 
 class Simulator {
+	private final Logger logger;
 	private final WeatherTower weatherTower;
 	private int simulationCount;
 
-	public Simulator() {
+	public Simulator() throws IOException {
+		this.logger = new Logger("simulation.txt");
 		this.weatherTower = new WeatherTower();		
 	}
 
@@ -26,20 +29,20 @@ class Simulator {
 
 	public void simulate() {
 		while (simulationCount > 0) {
-			weatherTower.conditionsChanged();
+			weatherTower.changeWeather();
 			simulationCount--;
 		}
 	}
 
 	public static void main(String[] args) {
 		if (args.length == 1) {			
-			Simulator main = new Simulator();
-
 			try {
+				Simulator main = new Simulator();
 				main.parse(args[0]);
 				main.simulate();
+				Logger.close();
 			} catch(IOException | SimulatorException e) {
-				System.out.println(e.getMessage());
+				System.err.println(e.getMessage());
 			}
 		}
 	}

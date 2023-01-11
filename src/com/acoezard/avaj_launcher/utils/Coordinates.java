@@ -2,14 +2,30 @@ package com.acoezard.avaj_launcher.utils;
 
 
 public class Coordinates {
-    private final int longitude;
-    private final int latitude;
-    private final int height;
+    private int longitude;
+    private int latitude;
+    private int height;
 
     public Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;
+    }
+
+    public void increaseLongitude(int n) {
+        this.longitude += n;
+    }
+
+    public void increaseLatitude(int n) {
+        this.latitude += n;
+    }
+
+    public void increaseHeight(int n) {
+        this.height += n;
+    }
+
+    public void decreaseHeight(int n) {
+        this.height -= n;
     }
 
     public int getLongitude() {

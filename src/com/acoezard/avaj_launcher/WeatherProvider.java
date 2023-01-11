@@ -3,8 +3,13 @@ package com.acoezard.avaj_launcher;
 import com.acoezard.avaj_launcher.utils.Coordinates;
 
 public class WeatherProvider {
+    public static final String WEATHER_RAIN = "RAIN";
+    public static final String WEATHER_FOG = "FOG";
+    public static final String WEATHER_SUN = "SUN";
+    public static final String WEATHER_SNOW = "SNOW";
+
     private static final WeatherProvider weatherProvider = new WeatherProvider();
-    private static final String[] weather = new String[]{ "RAIN", "FOG", "SUN", "SNOW" };
+    private static final String[] weather = new String[]{ WEATHER_RAIN, WEATHER_FOG, WEATHER_SUN, WEATHER_SNOW };
 
     private WeatherProvider() {}
 

@@ -38,7 +38,6 @@ public class Parser {
             Flyable flyable = AircraftFactory.newAircraft(args[0], args[1], longitude, latitude, height);
             this.aicrafts.add(flyable);
         }
-
 	}
 
 	private String nextLine(BufferedReader bufferedReader) throws IOException {
