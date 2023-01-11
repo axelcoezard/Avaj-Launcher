@@ -16,6 +16,7 @@ public class Tower {
 
     public void unregister(Flyable flyable) {
         this.observers.remove(flyable);
+        Logger.log("Tower says: " + flyable.toString() + " unregistered from tower.");
     }
 
     protected void conditionsChanged() {
