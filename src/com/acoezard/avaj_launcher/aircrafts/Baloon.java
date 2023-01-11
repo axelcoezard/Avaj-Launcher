@@ -1,5 +1,7 @@
 package com.acoezard.avaj_launcher.aircrafts;
 
+import java.util.HashMap;
+
 import com.acoezard.avaj_launcher.WeatherProvider;
 import com.acoezard.avaj_launcher.WeatherTower;
 import com.acoezard.avaj_launcher.utils.Coordinates;
@@ -7,6 +9,13 @@ import com.acoezard.avaj_launcher.utils.Logger;
 
 public class Baloon extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
+
+    private final HashMap<String, String> messages = new HashMap<>() {{
+        put(WeatherProvider.WEATHER_SUN, "Let's enjoy the good weather and take some pics.");
+        put(WeatherProvider.WEATHER_RAIN, "Damn you rain! You messed up my baloon.");
+        put(WeatherProvider.WEATHER_FOG, "");
+        put(WeatherProvider.WEATHER_SNOW, " It's snowing. We're gonna crash.");
+    }};
 
     public Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
@@ -25,6 +34,7 @@ public class Baloon extends Aircraft implements Flyable {
             case WeatherProvider.WEATHER_SNOW:
                 this.coordinates.decreaseHeight(15);
         }
+        Logger.log(this + ": " + this.messages.get(weather));
         if (this.coordinates.getHeight() == 0) {
             Logger.log(this + " is landing at " + this.coordinates);
             this.weatherTower.unregister(this);
