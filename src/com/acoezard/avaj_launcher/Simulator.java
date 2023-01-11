@@ -23,6 +23,7 @@ class Simulator {
 
 		this.simulationCount = parser.getSimulationCount();
 		for (Flyable flyable : parser.getAircrafts()) {
+			flyable.registerTower(this.weatherTower);
 			this.weatherTower.register(flyable);
 		}
 	}

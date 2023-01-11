@@ -21,11 +21,11 @@ public class Coordinates {
     }
 
     public void increaseHeight(int n) {
-        this.height += n;
+        this.height = Math.min(100, this.height + n);
     }
 
     public void decreaseHeight(int n) {
-        this.height -= n;
+        this.height = Math.max(0, this.height - n);
     }
 
     public int getLongitude() {

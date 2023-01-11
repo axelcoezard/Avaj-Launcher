@@ -3,6 +3,7 @@ package com.acoezard.avaj_launcher.aircrafts;
 import com.acoezard.avaj_launcher.WeatherProvider;
 import com.acoezard.avaj_launcher.WeatherTower;
 import com.acoezard.avaj_launcher.utils.Coordinates;
+import com.acoezard.avaj_launcher.utils.Logger;
 
 public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
@@ -23,6 +24,10 @@ public class JetPlane extends Aircraft implements Flyable {
                 this.coordinates.increaseLatitude(1);
             case WeatherProvider.WEATHER_SNOW:
                 this.coordinates.decreaseHeight(7);
+        }
+        if (this.coordinates.getHeight() == 0) {
+            Logger.log(this + " is landing at " + this.coordinates);
+            this.weatherTower.unregister(this);
         }
     }
 
