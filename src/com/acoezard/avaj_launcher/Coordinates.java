@@ -1,7 +1,7 @@
 package com.acoezard.avaj_launcher;
 
 
-class Coordinates {
+public class Coordinates {
     private final int longitude;
     private final int latitude;
     private final int height;

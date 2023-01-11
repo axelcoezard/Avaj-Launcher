@@ -1,5 +1,9 @@
 package com.acoezard.avaj_launcher;
 
+import com.acoezard.avaj_launcher.flyables.Baloon;
+import com.acoezard.avaj_launcher.flyables.Helicopter;
+import com.acoezard.avaj_launcher.flyables.JetPlane;
+
 public class AircraftFactory {
 
     public static final String TYPE_HELICOPTER = "helicopter";
