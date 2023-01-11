@@ -1,7 +1,5 @@
-package com.acoezard.avaj_launcher.flyables;
+package com.acoezard.avaj_launcher.aircrafts;
 
-import com.acoezard.avaj_launcher.Aircraft;
-import com.acoezard.avaj_launcher.Flyable;
 import com.acoezard.avaj_launcher.WeatherTower;
 import com.acoezard.avaj_launcher.utils.Coordinates;
 
@@ -18,5 +16,10 @@ public class Baloon extends Aircraft implements Flyable {
 
     public void registerTower(WeatherTower weatherTower) {
         this.weatherTower = weatherTower;
+    }
+
+    @Override
+    public String toString() {
+        return "Baloon#" + name + "(" + id + ")";
     }
 }

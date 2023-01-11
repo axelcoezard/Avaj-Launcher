@@ -1,9 +1,6 @@
-package com.acoezard.avaj_launcher;
+package com.acoezard.avaj_launcher.aircrafts;
 
 import com.acoezard.avaj_launcher.exceptions.SimulatorException;
-import com.acoezard.avaj_launcher.flyables.Baloon;
-import com.acoezard.avaj_launcher.flyables.Helicopter;
-import com.acoezard.avaj_launcher.flyables.JetPlane;
 import com.acoezard.avaj_launcher.utils.Coordinates;
 
 public class AircraftFactory {

@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.acoezard.avaj_launcher.AircraftFactory;
-import com.acoezard.avaj_launcher.Flyable;
+import com.acoezard.avaj_launcher.aircrafts.AircraftFactory;
+import com.acoezard.avaj_launcher.aircrafts.Flyable;
 import com.acoezard.avaj_launcher.exceptions.SimulatorException;
 
 public class Parser {

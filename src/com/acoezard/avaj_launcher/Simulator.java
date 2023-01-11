@@ -2,6 +2,7 @@ package com.acoezard.avaj_launcher;
 
 import java.io.IOException;
 
+import com.acoezard.avaj_launcher.aircrafts.Flyable;
 import com.acoezard.avaj_launcher.exceptions.SimulatorException;
 import com.acoezard.avaj_launcher.utils.Parser;
 
