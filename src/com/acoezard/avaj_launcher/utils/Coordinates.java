@@ -9,7 +9,7 @@ public class Coordinates {
     public Coordinates(int longitude, int latitude, int height) {
         this.longitude = longitude;
         this.latitude = latitude;
-        this.height = Math.max(0, Math.min(height, 100));
+        this.height = height;
     }
 
     public void increaseLongitude(int n) {
