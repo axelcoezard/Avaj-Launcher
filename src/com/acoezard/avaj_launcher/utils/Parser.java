@@ -42,10 +42,6 @@ public class Parser {
                 throw new SimulatorException("Both longitude and latitude should be positive on line '" + aircraftLine + "'.");
             }
 
-            if (height < 0 || height > 100) {
-                throw new SimulatorException("Height should be between 0 and 100 on line '" + aircraftLine + "'.");
-            }
-
             Flyable flyable = AircraftFactory.newAircraft(args[0], args[1], longitude, latitude, height);
             this.aicrafts.add(flyable);
             line++;
