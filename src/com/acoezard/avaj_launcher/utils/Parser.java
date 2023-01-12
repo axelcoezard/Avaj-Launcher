@@ -16,15 +16,18 @@ public class Parser {
     
     public void parse(String filename) throws IOException, SimulatorException {
 		BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
-
+        
 		String firstLine = this.nextLine(bufferedReader);
         if (firstLine == null) {
-            throw new SimulatorException("No not-empty line has been found");
+            throw new SimulatorException("No not-empty line has been found.");
         }
-        this.shouldBeNumeric(firstLine);
-        this.simulationCount = Integer.parseInt(firstLine);
+        this.simulationCount = this.shouldBeNumeric(firstLine);
+        if (this.simulationCount < 0) {
+            throw new SimulatorException("Simulation count should be positive.");
+        }
 
 		String aircraftLine;
+        Integer line = 0;
         while ((aircraftLine = this.nextLine(bufferedReader)) != null) {
             String[] args = aircraftLine.split("\\s+");
             if (args.length != 5) {
@@ -35,8 +38,13 @@ public class Parser {
             int latitude = this.shouldBeNumeric(args[3]);
             int height = this.shouldBeNumeric(args[4]);
 
+            if (longitude < 0 || latitude < 0) {
+                throw new SimulatorException("Both longitude and latitude should be positive on line '" + aircraftLine + "'.");
+            }
+
             Flyable flyable = AircraftFactory.newAircraft(args[0], args[1], longitude, latitude, height);
             this.aicrafts.add(flyable);
+            line++;
         }
 	}
 
