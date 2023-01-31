@@ -27,12 +27,16 @@ public class Helicopter extends Aircraft implements Flyable {
             case WeatherProvider.WEATHER_SUN:
                 this.coordinates.increaseLongitude(10);
                 this.coordinates.increaseHeight(2);
+                break;
             case WeatherProvider.WEATHER_RAIN:
                 this.coordinates.increaseLongitude(5);
+                break;
             case WeatherProvider.WEATHER_FOG:
                 this.coordinates.increaseLongitude(1);
+                break;
             case WeatherProvider.WEATHER_SNOW:
                 this.coordinates.decreaseHeight(12);
+                break;
         }
         Logger.log(this + ": " + this.messages.get(weather));
         if (this.coordinates.getHeight() == 0) {

@@ -27,12 +27,16 @@ public class Baloon extends Aircraft implements Flyable {
             case WeatherProvider.WEATHER_SUN:
                 this.coordinates.increaseLongitude(2);
                 this.coordinates.increaseHeight(4);
+                break;
             case WeatherProvider.WEATHER_RAIN:
                 this.coordinates.decreaseHeight(5);
+                break;
             case WeatherProvider.WEATHER_FOG:
                 this.coordinates.decreaseHeight(3);
+                break;
             case WeatherProvider.WEATHER_SNOW:
                 this.coordinates.decreaseHeight(15);
+                break;
         }
         Logger.log(this + ": " + this.messages.get(weather));
         if (this.coordinates.getHeight() == 0) {

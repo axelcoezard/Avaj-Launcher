@@ -27,12 +27,16 @@ public class JetPlane extends Aircraft implements Flyable {
             case WeatherProvider.WEATHER_SUN:
                 this.coordinates.increaseLatitude(10);
                 this.coordinates.increaseHeight(2);
+                break;
             case WeatherProvider.WEATHER_RAIN:
                 this.coordinates.increaseLatitude(5);
+                break;
             case WeatherProvider.WEATHER_FOG:
                 this.coordinates.increaseLatitude(1);
+                break;
             case WeatherProvider.WEATHER_SNOW:
                 this.coordinates.decreaseHeight(7);
+                break;
         }
         Logger.log(this + ": " + this.messages.get(weather));
         if (this.coordinates.getHeight() == 0) {
