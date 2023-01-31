@@ -11,9 +11,9 @@ public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
 
     private final HashMap<String, String> messages = new HashMap<>() {{
-        put(WeatherProvider.WEATHER_SUN, "");
-        put(WeatherProvider.WEATHER_RAIN, "It's raining. Better watch out for lightings.");
-        put(WeatherProvider.WEATHER_FOG, "");
+        put(WeatherProvider.WEATHER_SUN, "Ain't no sunshine when she's gone. It's not warm when she's away.");
+        put(WeatherProvider.WEATHER_RAIN, "Humidity is rising, barometer's getting low.");
+        put(WeatherProvider.WEATHER_FOG, "You can't chase away the fog with a fan.");
         put(WeatherProvider.WEATHER_SNOW, "OMG! Winter is coming!");
     }};
     

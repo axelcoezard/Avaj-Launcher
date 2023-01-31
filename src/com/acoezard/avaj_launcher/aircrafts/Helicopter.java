@@ -12,8 +12,8 @@ public class Helicopter extends Aircraft implements Flyable {
 
     private final HashMap<String, String> messages = new HashMap<>() {{
         put(WeatherProvider.WEATHER_SUN, "This is hot.");
-        put(WeatherProvider.WEATHER_RAIN, "");
-        put(WeatherProvider.WEATHER_FOG, "");
+        put(WeatherProvider.WEATHER_RAIN, "I'm singing in the rain, I'm singing in the rain!");
+        put(WeatherProvider.WEATHER_FOG, "There is something in the mist!");
         put(WeatherProvider.WEATHER_SNOW, "My rotor is going to freeze!");
     }};
 

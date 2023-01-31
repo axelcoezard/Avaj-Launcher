@@ -13,7 +13,7 @@ public class Baloon extends Aircraft implements Flyable {
     private final HashMap<String, String> messages = new HashMap<>() {{
         put(WeatherProvider.WEATHER_SUN, "Let's enjoy the good weather and take some pics.");
         put(WeatherProvider.WEATHER_RAIN, "Damn you rain! You messed up my baloon.");
-        put(WeatherProvider.WEATHER_FOG, "");
+        put(WeatherProvider.WEATHER_FOG, "Smoke on the water, fire in the sky!");
         put(WeatherProvider.WEATHER_SNOW, " It's snowing. We're gonna crash.");
     }};
 
