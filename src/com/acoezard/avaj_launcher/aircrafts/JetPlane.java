@@ -16,7 +16,7 @@ public class JetPlane extends Aircraft implements Flyable {
         put(WeatherProvider.WEATHER_FOG, "You can't chase away the fog with a fan.");
         put(WeatherProvider.WEATHER_SNOW, "OMG! Winter is coming!");
     }};
-    
+
     public JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
@@ -49,7 +49,6 @@ public class JetPlane extends Aircraft implements Flyable {
         this.weatherTower = weatherTower;
         this.weatherTower.register(this);
     }
-
 
     @Override
     public String toString() {

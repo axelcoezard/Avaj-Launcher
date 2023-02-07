@@ -50,8 +50,6 @@ public class Helicopter extends Aircraft implements Flyable {
         this.weatherTower.register(this);
     }
 
-
-
     @Override
     public String toString() {
         return "Helicopter#" + name + "(" + id + ")";
